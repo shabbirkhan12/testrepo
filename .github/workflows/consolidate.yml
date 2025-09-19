@@ -5,7 +5,7 @@ on:
     paths:
       - "master.json"   # Only run when master.json changes
     branches:
-      - main
+      - master
 
 jobs:
   consolidate:

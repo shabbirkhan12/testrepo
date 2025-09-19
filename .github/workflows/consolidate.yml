@@ -1,0 +1,32 @@
+name: Consolidate JSON Files
+
+on:
+  push:
+    paths:
+      - "master.json"   # Only run when master.json changes
+    branches:
+      - main
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Run consolidation script
+        run: node scripts/consolidate.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add configs/*.json
+          git commit -m "Consolidated JSON files from master.json" || echo "No changes to commit"
+          git push

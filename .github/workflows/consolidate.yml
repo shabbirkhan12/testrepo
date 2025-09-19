@@ -30,3 +30,5 @@ jobs:
           git add configs/*.json
           git commit -m "Consolidated JSON files from master.json" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

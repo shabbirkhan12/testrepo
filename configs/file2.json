@@ -1,4 +1,14 @@
 {
+  "0": {
+    "app_name": "synergis",
+    "version": "1.15.0",
+    "maintainer": "devops-team"
+  },
+  "1": {
+    "name": "shabbir",
+    "Version": "1.1.1",
+    "maintainer": "khan"
+  },
   "app_name": "synergis",
   "version": "1.15.0",
   "maintainer": "devops-team"
